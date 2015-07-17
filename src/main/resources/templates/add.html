@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="userApp">
+<head>
+    <title>Add word</title>
+    <link type="text/css" href="css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/user.js"></script>
+</head>
+<body>
+    <form class="form-horizontal" ng-controller="userController">
+        <h1 class="col-sm-offset-2">Add word</h1>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Word</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" placeholder="word" ng-model="wordName" />
+            </div>
+        </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Meaning</label>
+        <div class="col-sm-5">
+            <textarea class="form-control" rows="3" placeholder="meaning" ng-model="wordMeaning"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-5">
+            <button type="submit" class="btn btn-primary" ng-click="addWord()">Save</button>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
