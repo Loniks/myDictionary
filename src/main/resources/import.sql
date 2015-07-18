@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `mydictionary`;
-
 USE `mydictionary`;
 
 CREATE TABLE IF NOT EXISTS `words` (
