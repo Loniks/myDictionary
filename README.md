@@ -16,11 +16,11 @@ The application provides a custom web UI using the REST API to display the resul
 - yellow for 0 rating words 
 - red for less than 0 words
  
-![Home page](https://photos-1.dropbox.com/t/2/AABLg8TRJXuGua1ZAOef_oCKuJkEBXl3Usv-5po3CQ8-yQ/12/9510259/jpeg/32x32/1/1437217200/0/2/Dictionary.jpg/CPO6xAQgASACIAMgBCAFIAYgBygBKAI/XnUBwK2KgsmbCSnQNuos6L8ioi9j4r2hloS5pnBvUxY?size=1024x768&size_mode=2)
+![Home page](https://cloud.githubusercontent.com/assets/11942950/8761619/df3ee620-2d62-11e5-8b98-6bf3a495bfa5.jpg)
 
 For adding new word, point your browser to `http://localhost:8080/add`. In this page you find form for adding word name and its meaning. Word saved with default rating 0.
 
-![Add word page](https://photos-3.dropbox.com/t/2/AABFRmncYSAUkznjmh0C2FLSUhKk02gFqieIE6fOtk6PDA/12/9510259/jpeg/32x32/1/1437217200/0/2/addWord.jpg/CPO6xAQgASACIAMgBCAFIAYgBygBKAI/iJQmefRoR1JM8kGglkLQX9tnkd0h8285bgJqnQkVZ30?size=1024x768&size_mode=2)
+![Add word page](https://cloud.githubusercontent.com/assets/11942950/8761618/df3bda20-2d62-11e5-95b0-f3035e448971.jpg)
 
 
 ## Technologies used
