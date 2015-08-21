@@ -59,5 +59,25 @@ public class Word {
                 " with rating "+this.getRating();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Word)) return false;
+
+        Word word1 = (Word) o;
+
+        if (getRating() != word1.getRating()) return false;
+        if (!getWord().equals(word1.getWord())) return false;
+        return getMeaning().equals(word1.getMeaning());
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getWord().hashCode();
+        result = 31 * result + getMeaning().hashCode();
+        result = 31 * result + getRating();
+        return result;
+    }
 }
 

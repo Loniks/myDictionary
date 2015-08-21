@@ -15,6 +15,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.TransactionSystemException;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -117,29 +118,27 @@ public class WordRepositoryTest {
 
     @Test
     public void isOneWordEquals(){
-        assertEquals(repository.findOne("banana").toString(),repository.findOne("banana").toString());
+        assertEquals(repository.findOne("banana"),repository.findOne("banana"));
     }
 
     @Test
     public void isTwoWordEquals(){
-        assertNotEquals(repository.findOne("apple").toString(), repository.findOne("banana").toString());
+        assertNotEquals(repository.findOne("apple"), repository.findOne("banana"));
     }
 
     @Test
     public void getListOfWordByRating() {
-        List<Word> list = new LinkedList<>();
+        List<Word> list = new ArrayList<>();
         list.add(repository.findOne("banana"));
         list.add(repository.findOne("apple"));
         list.add(repository.findOne("orange"));
-        assertEquals(list.toString(), repository.findAllByOrderByRatingDesc().toString());
+        assertEquals(list, repository.findAllByOrderByRatingDesc());
     }
 
     @After
     public void restoreDB(){
         repository.deleteAll();
-        for(Word word: beforeList){
-            repository.save(word);
-        }
+        beforeList.forEach(repository::save);
     }
 
 }
