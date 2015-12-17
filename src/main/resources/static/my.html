@@ -1,0 +1,11 @@
+<h1 class="col-sm-offset-2">My dictionary</h1>
+<ul class="list-group">
+    <li class="list-group-item col-sm-offset-1 col-sm-10 panel panel-{{checkWord(someWord.rating)}}"
+        ng-repeat="someWord in words">
+        <div class="panel-heading">{{someWord.word}}</div>
+        <div class="panel-body">
+            <p>{{someWord.meaning}}</p>
+            <span class="badge">{{someWord.rating}}</span>
+        </div>
+    </li>
+</ul>
