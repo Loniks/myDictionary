@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="dictionaryApp">
+<head>
+    <title>My Dictionary</title>
+    <link type="text/css" href="css/bootstrap.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/angular-strap.min.js"></script>
+    <script type="text/javascript" src="js/angular-strap.tpl.min.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+</head>
+<body>
+<ul class="nav nav-tabs" ng-controller="index">
+    <li ng-show="user"><a href="#/home">Home</a></li>
+    <li ng-show="user"><a href="#/my">My</a></li>
+    <li><a href="#/login">Login</a></li>
+    <li><a href="#/register">Register</a></li>
+    <li ng-show="user"><a href="#/add">Add</a></li>
+    <li ng-show="user"><a href="#/" ng-click="logout()">Logout</a></li>
+</ul>
+<div ng-view class="container"></div>
+</body>
+</html>

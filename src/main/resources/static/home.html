@@ -1,0 +1,23 @@
+<form role="form" class="form-horizontal">
+    <br class="form-group">
+        </br>
+        <input type="text" class="form-control" ng-model="user" bs-options="user.email for user in users"
+               placeholder="Enter email" bs-typeahead>
+        <label class="label label-info">bob@email.com</label>
+    </div>
+   <div class="form-group" ng-show="words">
+        <h1 class="col-sm-offset-2">Dictionary of {{user.name}}</h1>
+        <ul class="list-group">
+            <li class="list-group-item col-sm-offset-1 col-sm-10 panel panel-{{checkWord(someWord.rating)}}"
+                ng-repeat="someWord in words">
+                <div class="panel-heading">{{someWord.word}}</div>
+                <div class="panel-body">
+                    <p>{{someWord.meaning}}</p>
+                    <span class="badge">{{someWord.rating}}</span>
+                    <button class="btn btn-success" ng-click=" updateRating(someWord,true)">+1</button>
+                    <button class="btn btn-danger" ng-click="updateRating(someWord,false)">-1</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</form>
