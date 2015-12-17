@@ -2,10 +2,7 @@ package myDictionary.domain;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Domain class representing a {@link Word} instance.
@@ -13,20 +10,34 @@ import javax.persistence.Table;
  * @author Dmytro Bondar
  */
 @Entity
-@Table(name="words")
+@Table(name = "words")
 public class Word {
 
     @Id
-    @Column(name="word")
-    @NotBlank
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "word_id")
+    private Integer wordId;
+
+    @Column(name = "word")
     private String word;
 
-    @Column(name="meaning")
-    @NotBlank
+    @Column(name = "meaning")
     private String meaning;
 
-    @Column(name="rating")
+    @Column(name = "rating")
     private int rating;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName="user_id")
+    private User user;
+
+    public Integer getWordId() {
+        return wordId;
+    }
+
+    public void setWordId(Integer wordId) {
+        this.wordId = wordId;
+    }
 
     public String getWord() {
         return word;
@@ -35,7 +46,6 @@ public class Word {
     public void setWord(String word) {
         this.word = word;
     }
-
 
     public int getRating() {
         return rating;
@@ -53,10 +63,18 @@ public class Word {
         this.meaning = meaning;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
-        return "Word "+this.getWord()+" is meaning "+this.getMeaning()+
-                " with rating "+this.getRating();
+        return "Word " + this.getWord() + " is meaning " + this.getMeaning() +
+                " with rating " + this.getRating();
     }
 
     @Override
@@ -79,5 +97,6 @@ public class Word {
         result = 31 * result + getRating();
         return result;
     }
+
 }
 
