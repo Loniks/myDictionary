@@ -8,14 +8,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  * Core Spring Boot application configuration. Used for bootstrap and data setup. With {@code @SpringBootApplication}
- * using annotations {@code @EnableJpaRepositories} for using Spring Data and {@code @Import} for importing
- * {@link RepositoryRestConfigurationWithId} configuration for Spring Data REST.
+ * using annotations {@code @EnableJpaRepositories} for using Spring Data.
  *
  * @author Dmytro Bondar
  */
 @SpringBootApplication
 @EnableJpaRepositories
-@Import(RepositoryRestConfigurationWithId.class)
 public class MyDictionaryApplication {
 
     public static void main(String[] args) {
