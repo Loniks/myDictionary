@@ -39,5 +39,5 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     runtime('org.apache.tomcat.embed:tomcat-embed-jasper:8.0.28')
     testCompile("org.springframework.boot:spring-boot-starter-test")
-    runtime('org.postgresql:postgresql:9.4-1201-jdbc41')
+    runtime('org.postgresql:postgresql:42.2.6')
 }
