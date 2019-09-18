@@ -1,36 +1,16 @@
-buildscript {
-    ext {
-        springBootVersion = '2.1.8.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
+plugins {
+    id 'org.springframework.boot' version '2.1.8.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
 }
-
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'io.spring.dependency-management'
 
 jar {
     baseName = 'myDictionary'
     version = '0.1.0-SNAPSHOT'
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 repositories {
     mavenCentral()
-}
-
-idea {
-    module {
-        inheritOutputDirs = false
-        outputDir = file("$buildDir/main/")
-    }
 }
 
 dependencies {
